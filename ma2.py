@@ -1,6 +1,5 @@
 import time
 from multiprocessing import Pool, cpu_count
-
 def factorize_sync(number):
     factors = []
     for i in range(1, number + 1):
@@ -32,4 +31,3 @@ def measure_time(func, *args):
     end_time = time.time()
     execution_time = end_time - start_time
     return result, execution_time
-

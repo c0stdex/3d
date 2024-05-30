@@ -24,13 +24,11 @@ def process_directory(src_dir, dest_dir, executor):
            
             executor.submit(copy_file, file_path, target_dir)
 
-
 def main():
     
     if len(sys.argv) < 2:
         print("Usage: python sort_files.py <source_directory> [<destination_directory>]")
         return
-
     
     src_dir = sys.argv[1]
     dest_dir = sys.argv[2] if len(sys.argv) > 2 else "dist"
@@ -39,6 +37,6 @@ def main():
     with ThreadPoolExecutor(max_workers=4) as executor:
         process_directory(src_dir, dest_dir, executor)
 
-# Запускаємо основну функцію
+
 if __name__ == "__main__":
     main()
